@@ -11,12 +11,22 @@ export function addMetodoPagRoute(server: core.Express, scope: Orcamento) {
   server.post(addMetodoPagRoutePath, addMetodoPag2OrdCallback(scope));
 }
 
-// ver se nome ja n existe
-
 export const addMetodoPag2OrdCallback = (scope: Orcamento) => (
   req: ExpressRequest<AddMetodoPagBody>,
   res: core.Response
 ) => {
+  let error = false;
+  scope.metodosPag.forEach((metodoPag: EnumObj) => {
+    if (req.body.nome === metodoPag.value) {
+      res.status(400);
+      res.json({ message: 'This name already exists' });
+      error = true;
+      return;
+    }
+  });
+  if (error) {
+    return;
+  }
   const newMetodoPag: EnumObj = {
     key: scope.actualKeyMet,
     value: req.body.nome

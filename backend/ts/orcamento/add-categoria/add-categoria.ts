@@ -11,13 +11,22 @@ export function addCategoriaRoute(server: core.Express, scope: Orcamento) {
   server.post(addCategoriaRoutePath, addCategoria2OrdCallback(scope));
 }
 
-// ver se nome ja n existe
-
 export const addCategoria2OrdCallback = (scope: Orcamento) => (
   req: ExpressRequest<AddCategoriaBody>,
   res: core.Response
 ) => {
-  console.log(req);
+  let error = false;
+  scope.categorias.forEach((categoria: EnumObj) => {
+    if (req.body.nome === categoria.value) {
+      res.status(400);
+      res.json({ message: 'This name already exists' });
+      error = true;
+      return;
+    }
+  });
+  if (error) {
+    return;
+  }
   const newCategoria: EnumObj = {
     key: scope.actualKeyCat,
     value: req.body.nome
