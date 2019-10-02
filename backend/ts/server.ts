@@ -5,8 +5,7 @@ import * as core from 'express-serve-static-core';
 import { Server } from 'http';
 import { Orcamento } from './orcamento/orcamento';
 import { OrcamentoServer } from './types';
-
-export const port = 7000;
+import { port } from './variables';
 
 export class NodeServer implements OrcamentoServer {
   server: core.Express;
