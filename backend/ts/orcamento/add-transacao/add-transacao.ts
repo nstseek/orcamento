@@ -1,7 +1,9 @@
 import * as core from 'express-serve-static-core';
+import nodeFS from 'fs';
 import { ExpressRequest } from '../../types';
+import { orcamentoDataPath } from '../../variables';
 import { Orcamento } from '../orcamento';
-import { Transacao } from '../types';
+import { OrcamentoData, Transacao } from '../types';
 import { addTransacaoRoutePath } from '../variables';
 import AddTransacaoBody from './types';
 
@@ -19,6 +21,11 @@ export const addTransacao2OrdCallback = (scope: Orcamento) => (
     id: scope.actualId
   };
   scope.transacoes.push(newTransacao);
+  scope.actualId = scope.actualId + 1;
+  const orcamento: OrcamentoData = {
+    ...scope
+  };
+  nodeFS.writeFileSync(orcamentoDataPath, JSON.stringify(orcamento), { encoding: 'utf8' });
   res.status(200);
   res.json({ message: 'OK' });
 };

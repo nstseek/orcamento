@@ -4,3 +4,7 @@ export const getEnumsRoutePath = '/get-enums';
 export const getTransacoesRoutePath = '/get-transacoes';
 export const addCategoriaRoutePath = '/add-categoria';
 export const addMetodoPagRoutePath = '/add-metodo-pag';
+export const delCategoriaRoutePath = '/del-categoria/:id';
+export const delTransacaoRoutePath = '/del-transacao/:id';
+export const delMetodoPagRoutePath = '/del-metodo-pag/:id';
+

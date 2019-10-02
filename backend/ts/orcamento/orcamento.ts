@@ -1,6 +1,8 @@
 import * as core from 'express-serve-static-core';
 import nodeFS from 'fs';
 import { orcamentoDataPath } from '../variables';
+import { addCategoriaRoute } from './add-categoria/add-categoria';
+import { addMetodoPagRoute } from './add-metodo-pag/add-metodo-pag';
 import { addTransacaoRoute } from './add-transacao/add-transacao';
 import { getDetalhesTransacaoRoute } from './detalhes-transacao/detalhes-transacao';
 import { getEnumsRoute } from './get-enums/get-enums';
@@ -36,5 +38,7 @@ export class Orcamento implements OrcamentoBase {
     getDetalhesTransacaoRoute(server, this);
     getEnumsRoute(server, this);
     getTransacoesRoute(server, this);
+    addCategoriaRoute(server, this);
+    addMetodoPagRoute(server, this);
   }
 }

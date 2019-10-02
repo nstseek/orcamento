@@ -24,11 +24,13 @@ export class NodeServer implements OrcamentoServer {
     this.port = serverPort;
     this.ready = false;
     this.server = this.Express();
+    this.server.use(cors());
+    this.server.use(bodyParser.json({ limit: '10mb' }));
     this.serverHandler = this.server.listen(this.port, this.listenCallback);
     this.orcamentoHandler = new Orcamento(this.server);
   }
 
-  listenCallback(err: string) {
+  listenCallback = (err: string) => {
     if (err) {
       this.throwError(err);
     } else {
