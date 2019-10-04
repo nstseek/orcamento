@@ -1,0 +1,19 @@
+<div class="dashboard-container">
+  <div class="month-selector-card card-container">
+    <div class="month-selector-title">
+      <span>Selecione um mês e um ano para ver as transações registradas</span>
+    </div>
+    <div class="month-selector-fields">
+      <span>Selecione:</span>
+      <div>
+        <input type="date" [formControl]="date" />
+        <button type="button" (click)="searchMonth()">
+          <div [class]="spinner">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="cat-metpay-card card-container"></div>
+</div>
