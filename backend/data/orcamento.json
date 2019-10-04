@@ -1,9 +1,1 @@
-{
-    "categorias": [],
-    "transacoes": [],
-    "actualId": 0,
-    "metodosPag": [],
-    "actualKeyCat": 0,
-    "actualKeyMet": 0
-  }
-  
+{"categorias":[],"transacoes":[{"data":"2019-12-21T02:00:00.000Z","titulo":"Compra de teste","metodoPag":3,"detalhes":"Essa compra foi feita pra testar o server","categoria":2,"parcelas":1,"valor":356,"id":0},{"data":"2017-12-21T02:00:00.000Z","titulo":"Compra de teste","metodoPag":3,"detalhes":"Essa compra foi feita pra testar o server","categoria":2,"parcelas":1,"valor":356,"id":1},{"data":"2017-07-21T03:00:00.000Z","titulo":"Compra de teste","metodoPag":3,"detalhes":"Essa compra foi feita pra testar o server","categoria":2,"parcelas":1,"valor":356,"id":2},{"data":"2017-01-21T02:00:00.000Z","titulo":"Compra de teste","metodoPag":3,"detalhes":"Essa compra foi feita pra testar o server","categoria":2,"parcelas":1,"valor":356,"id":3}],"actualId":4,"metodosPag":[],"actualKeyCat":0,"actualKeyMet":0}

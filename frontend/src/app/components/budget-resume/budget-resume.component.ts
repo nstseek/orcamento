@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./budget-resume.component.scss']
 })
 export class BudgetResumeComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

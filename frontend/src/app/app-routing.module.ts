@@ -7,7 +7,7 @@ import { AddCategoryOrPaymentMethodComponent } from './components/add-category-o
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'transaction/:id', component: MonthViewerComponent },
+  { path: 'transactions', component: MonthViewerComponent },
   { path: 'add-cat-payment', component: AddCategoryOrPaymentMethodComponent }
 ];
 
